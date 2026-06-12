@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="shop-hero">
+    <img src="/images/inside.jpg" alt="Stay Gold 店内">
+</div>
+<div class="page-content">
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}
+        <div class="section-content">
+            {{ . }}
+        </div>
+    {{ end }}
+</div>
+{{ end }}

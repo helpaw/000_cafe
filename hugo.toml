@@ -1,0 +1,31 @@
+baseURL = 'https://example.org/'
+locale = 'ja'
+defaultContentLanguage = 'ja'
+title = 'Stay Gold'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[menu]
+  [[menu.main]]
+    identifier = "menu"
+    name = "MENU"
+    url = "/menu/"
+    weight = 10
+  [[menu.main]]
+    identifier = "shop"
+    name = "SHOP"
+    url = "/shop/"
+    weight = 20
+  [[menu.main]]
+    identifier = "release"
+    name = "RELEASE"
+    url = "/release/"
+    weight = 30
+  [[menu.main]]
+    identifier = "access"
+    name = "ACCESS"
+    url = "/access/"
+    weight = 40

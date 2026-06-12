@@ -1,0 +1,41 @@
+{{ define "main" }}
+<div class="page-content">
+    <h1>{{ .Title }}</h1>
+
+    <div class="menu-wrapper">
+    <div class="menu-circle-grid">
+        <figure>
+            <div class="circle-img"><img src="/images/menu/01_hotcoffee.png" alt="Hot Coffee"></div>
+            <figcaption>Hot Coffee</figcaption>
+        </figure>
+        <figure>
+            <div class="circle-img"><img src="/images/menu/02_icecoffee.png" alt="Iced Coffee"></div>
+            <figcaption>Iced Coffee</figcaption>
+        </figure>
+        <figure>
+            <div class="circle-img"><img src="/images/menu/03_softdrink.png" alt="Soft Drink"></div>
+            <figcaption>Soft Drink</figcaption>
+        </figure>
+        <figure>
+            <div class="circle-img"><img src="/images/menu/04_humberger.png" alt="Burger"></div>
+            <figcaption>Burger</figcaption>
+        </figure>
+        <figure>
+            <div class="circle-img"><img src="/images/menu/05_clubsand.png" alt="Club Sandwich"></div>
+            <figcaption>Club Sandwich</figcaption>
+        </figure>
+        <figure>
+            <div class="circle-img"><img src="/images/menu/06_otonalunch.png" alt="Adult Kids' Plate"></div>
+            <figcaption>Adult Kids' Plate</figcaption>
+        </figure>
+    </div>
+
+    {{ with .Content }}
+        <div class="section-content">
+            {{ . }}
+        </div>
+    {{ end }}
+    </div>
+</div>
+
+{{ end }}

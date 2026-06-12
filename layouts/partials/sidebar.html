@@ -1,0 +1,15 @@
+<div class="sidebar-header">
+    <h1><a href="/">{{ .Site.Title }}</a></h1>
+</div>
+<nav class="sidebar-nav">
+    <ul>
+        {{ range .Site.Menus.main }}
+        <li>
+            <a href="{{ .URL | relURL }}" class="menu-item-link">
+                <span class="menu-item-icon">{{ .Pre | safeHTML }}</span>
+                <span class="menu-item-text">{{ .Name }}</span>
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</nav>

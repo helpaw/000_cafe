@@ -1,0 +1,409 @@
+@font-face {
+    font-family: 'Love Ya Like A Sister';
+    src: url('/fonts/love-ya-like-a-sister.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kaisei Decol';
+    src: url('/fonts/kaisei-decol.ttf') format('truetype');
+    font-display: swap;
+}
+
+:root {
+    --black: #111111;
+    --red: #c0392b;
+    --white: #f5f0e8;
+    --gray: #888;
+    --light: #e8e0d0;
+    --nav-bg: rgba(10, 10, 10, 0.97);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Kaisei Decol', "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--white);
+    background-image: url('/images/noise.svg');
+    color: var(--black);
+    line-height: 1.8;
+}
+
+/* ハンバーガーボタン */
+.hamburger {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    z-index: 1000;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 4px;
+}
+
+.hamburger span {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background-color: var(--black);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background-color: var(--white);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: var(--white);
+}
+
+/* オーバーレイナビ */
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: var(--nav-bg);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.nav-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.nav-logo {
+    font-family: 'Monoton', cursive;
+    font-size: 1.4rem;
+    letter-spacing: 0.15em;
+    color: var(--red);
+    text-decoration: none;
+}
+
+.nav-overlay ul {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.nav-overlay ul a {
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.nav-overlay ul a:hover {
+    color: var(--red);
+}
+
+/* メインコンテンツ */
+#content {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 80px 40px 60px;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    padding: 24px 40px;
+    font-size: 0.75rem;
+    color: var(--gray);
+    border-top: 1px solid var(--light);
+    letter-spacing: 0.1em;
+}
+
+/* 見出し */
+h1 {
+    font-family: 'Monoton', cursive;
+    font-size: 1.6rem;
+    font-weight: normal;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.8em;
+    padding-bottom: 0.3em;
+    border-left: 3px solid var(--red);
+    padding-left: 0.6em;
+}
+
+h2 {
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    font-weight: normal;
+    margin: 2.5em 0 1em;
+    color: var(--gray);
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 1.5em 0 0.5em;
+}
+
+/* テーブル */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+}
+
+thead:has(th:empty) {
+    display: none;
+}
+
+td, th {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--light);
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.menu-wrapper td:first-child {
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: 1rem;
+}
+
+.menu-wrapper td:last-child {
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: 1rem;
+    text-align: right;
+}
+
+th {
+    color: var(--gray);
+    font-weight: normal;
+    letter-spacing: 0.05em;
+}
+
+/* メニューカテゴリ行 */
+td strong:only-child {
+    display: block;
+    color: var(--gray);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding-top: 1em;
+}
+
+tr:has(td strong:only-child) td {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* リンク */
+a {
+    color: var(--red);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* リリース一覧 */
+.release-list {
+    margin-top: 2em;
+}
+
+.release-item {
+    padding: 0.9em 0;
+    border-bottom: 1px solid var(--light);
+}
+
+.release-item a {
+    font-family: 'Love Ya Like A Sister', cursive;
+    color: var(--black);
+    font-size: 1rem;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+}
+
+.release-item a:hover {
+    color: var(--red);
+}
+
+.release-nav {
+    display: flex;
+    margin-top: 3em;
+    padding-top: 1em;
+    border-top: 1px solid var(--light);
+    font-size: 0.85rem;
+}
+
+.release-nav a {
+    color: var(--gray);
+}
+
+/* トップページ本文 */
+.home-body {
+    font-family: 'Kaisei Decol', serif;
+    font-size: 1.15rem;
+    line-height: 2.2;
+    margin-top: 2em;
+}
+
+/* ヒーロー画像 */
+.hero {
+    margin: -80px -40px 60px;
+    position: relative;
+    overflow: hidden;
+    max-height: 520px;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.85);
+}
+
+.hero-title {
+    font-family: 'Monoton', cursive;
+    position: absolute;
+    bottom: 40px;
+    left: 48px;
+    color: var(--white);
+    font-size: 2.4rem;
+    letter-spacing: 0.2em;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+}
+
+.hero-title span {
+    display: block;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    color: var(--red);
+    margin-bottom: 6px;
+}
+
+/* メニューラッパー（写真とテーブルを同幅で揃える） */
+.menu-wrapper {
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.menu-wrapper table {
+    width: 100%;
+}
+
+.menu-wrapper td:last-child {
+    text-align: right;
+}
+
+/* メニュー写真グリッド（円形） */
+.menu-circle-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 32px;
+    margin: 2em 0 3em;
+}
+
+.menu-circle-grid figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+}
+
+.circle-img {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--red);
+}
+
+.circle-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.circle-img:hover img {
+    transform: scale(1.05);
+}
+
+.menu-circle-grid figcaption {
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    color: var(--gray);
+}
+
+@media (max-width: 480px) {
+    .menu-circle-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .circle-img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* 店舗詳細ヒーロー */
+.shop-hero {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.shop-hero img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.9);
+}
+
+/* モバイル */
+@media (max-width: 768px) {
+    #content {
+        padding: 60px 24px 40px;
+    }
+
+    .hero {
+        margin: -60px -24px 40px;
+        max-height: 360px;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+        left: 24px;
+        bottom: 24px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+}
