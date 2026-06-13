@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+  <circle cx="80" cy="80" r="80" fill="#1a1a1a"/>
+  <!-- レコード盤 -->
+  <circle cx="80" cy="80" r="52" fill="#2a2a2a" stroke="#d4c5a9" stroke-width="3"/>
+  <circle cx="80" cy="80" r="38" fill="#1a1a1a" stroke="#d4c5a9" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <circle cx="80" cy="80" r="24" fill="#1a1a1a" stroke="#d4c5a9" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <circle cx="80" cy="80" r="10" fill="#d4c5a9"/>
+  <circle cx="80" cy="80" r="4" fill="#1a1a1a"/>
+</svg>
