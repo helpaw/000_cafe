@@ -41,20 +41,21 @@ body {
     top: 20px;
     right: 24px;
     z-index: 1000;
-    background: none;
+    background: rgba(10, 10, 10, 0.45);
     border: none;
+    border-radius: 6px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     gap: 6px;
-    padding: 4px;
+    padding: 10px 12px;
 }
 
 .hamburger span {
     display: block;
     width: 28px;
     height: 2px;
-    background-color: var(--black);
+    background-color: var(--white);
     transition: transform 0.3s ease, opacity 0.3s ease;
     transform-origin: center;
 }
